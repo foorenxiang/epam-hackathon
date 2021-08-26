@@ -21,10 +21,8 @@ const AppContextProvider = ({ children }) => {
   const addUser = (newUser) => {
     const userExists = registeredUsers.some((user) => user.name === newUser.name);
 
-    let errorMessage = '';
     if (userExists) {
-      errorMessage = ERROR_USER_EXIST;
-      return errorMessage;
+      return ERROR_USER_EXIST;
     }
     setRegisteredUsers(() => {
       const updatedValue = [...registeredUsers, newUser];
