@@ -15,11 +15,17 @@ const HomeScreen = () => {
 
   const textBoxHandler = (textValue) => setText(textValue);
 
+  const ActiveProfileComponent = () =>
+    activeProfile ? <Text>Active profile: {activeProfile}</Text> : null;
+
+  const RegisteredUsersComponent = () =>
+    registeredUsers.length ? <Text>Registered Users: {registeredUsers}</Text> : null;
+
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
-      <Text>Active profile: {activeProfile}</Text>
-      <Text>Registered Users: {registeredUsers}</Text>
+      <ActiveProfileComponent />
+      <RegisteredUsersComponent />
       <TextInput placeholder="Add new task" onChangeText={textBoxHandler} />
       <TouchableOpacity onPress={submitTask}>
         <Text>Submit task</Text>
