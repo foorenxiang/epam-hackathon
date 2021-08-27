@@ -21,11 +21,8 @@ const HomeScreen = () => {
   const RegisteredUsersComponent = () =>
     registeredUsers.length ? <Text>Registered Users: {registeredUsers}</Text> : null;
 
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <ActiveProfileComponent />
-      <RegisteredUsersComponent />
+  const ReduxDemoComponent = () => (
+    <>
       <TextInput placeholder="Add new task" onChangeText={textBoxHandler} />
       <TouchableOpacity onPress={submitTask}>
         <Text>Submit task</Text>
@@ -41,6 +38,15 @@ const HomeScreen = () => {
           </TouchableOpacity>
         )}
       />
+    </>
+  );
+
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <ActiveProfileComponent />
+      <RegisteredUsersComponent />
+      <ReduxDemoComponent />
     </View>
   );
 };
