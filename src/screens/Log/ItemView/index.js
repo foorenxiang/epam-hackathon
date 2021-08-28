@@ -1,18 +1,23 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, Button } from 'react-native';
 
 const ItemView = ({
+  navigation: { navigate },
   route: {
     params: { id, title, description, status },
   },
-}) => (
-  <>
-    <Text>{id}</Text>
-    <Text>{title}</Text>
-    <Text>{description}</Text>
-    <Text>{status}</Text>
-  </>
-);
+}) => {
+  const RECYCLE = true;
+  return (
+    <>
+      <Text>{id}</Text>
+      <Text>{title}</Text>
+      <Text>{description}</Text>
+      <Text>{status}</Text>
+      {RECYCLE && <Button onPress={() => navigate('ObjectDetection')} title="Recycle?" />}
+    </>
+  );
+};
 
 const styles = StyleSheet.create({});
 
