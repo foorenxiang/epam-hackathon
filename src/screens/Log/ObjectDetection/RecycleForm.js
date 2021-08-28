@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { Picker } from '@react-native-picker/picker';
 import styles from '../../../styles/RecycleConfirmationStyle';
 
-const RecycleForm = ({ navigation: { navigate } }) => {
+const RecycleForm = ({ navigation: { navigate }, prediction }) => {
   const [yearsUsed, setYearsUsed] = useState('');
   const [deviceCondition, setDeviceCondition] = useState('');
 
@@ -16,17 +16,19 @@ const RecycleForm = ({ navigation: { navigate } }) => {
     'no longer usable',
   ];
 
+  const onSubmitHandler = () => navigate('RecycleConfirmation', { prediction });
+
   return (
     <Formik
       initialValues={{ otherNotes: '' }}
-      onSubmit={(values) => navigate('RecycleConfirmation', values)}
+      onSubmit={(values) => onSubmitHandler(values)}
       style={{ flexGrow: 1, width: '100%' }}
     >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <View>
           <Text>Additional Details</Text>
           <Text>Years Used</Text>
-          <Picker selectedValue={yearsUsed} onValueChange={(itemValue) => setYearsUsed(itemValue)}>
+          <Picker selectedValue={yearsUsed} onValueChange={(value) => setYearsUsed(value)}>
             {yearsUsedValues.map((value) => (
               <Picker.Item label={value} value={value} key={value} />
             ))}
@@ -34,7 +36,7 @@ const RecycleForm = ({ navigation: { navigate } }) => {
           <Text>Device Condition</Text>
           <Picker
             selectedValue={deviceCondition}
-            onValueChange={(itemValue) => setDeviceCondition(itemValue)}
+            onValueChange={(value) => setDeviceCondition(value)}
           >
             {deviceConditionValues.map((value) => (
               <Picker.Item label={value} value={value} key={value} />
@@ -48,7 +50,7 @@ const RecycleForm = ({ navigation: { navigate } }) => {
             value={values.otherNotes}
           />
           {/* <Button onPress={handleSubmit} title="Submit" /> */}
-          <Button onPress={() => navigate('RecycleConfirmation')} title="Submit" />
+          <Button onPress={() => onSubmitHandler()} title="Submit" />
         </View>
       )}
     </Formik>

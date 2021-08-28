@@ -108,7 +108,9 @@ const ObjectDetection = ({ navigation }) => {
         )}
       </View>
       <View style={styles.formikContainer}>
-        {!!selectedPrediction && <RecycleForm navigation={navigation} />}
+        {!!selectedPrediction && (
+          <RecycleForm prediction={selectedPrediction} navigation={navigation} />
+        )}
       </View>
       {/* <TextPad /> */}
     </ScrollView>
