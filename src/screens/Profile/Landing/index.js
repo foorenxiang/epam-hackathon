@@ -15,16 +15,16 @@ const ProfileLanding = ({ navigation: { navigate } }) => {
       style={{ flex: 1, width: '100%' }}
       contentContainerStyle={{ flex: 1, width: '100%' }}
     >
-      <Image source={Img} style={{ flex: 1, width: '100%', height: 400, resizeMode: 'center' }} />
+      <Image source={Img} style={{ flex: 1, width: '100%', height: 800, resizeMode: 'contain' }} />
       <TouchableOpacity
         style={{
           position: 'absolute',
-          top: 400,
-          left: 25,
+          top: 185,
+          left: 80,
           elevation: 100,
           height: 50,
-          width: 325,
-          backgroundColor: '#f00',
+          width: 200,
+          // backgroundColor: '#f00',
           opacity: 0.8,
         }}
         onPress={() => navigate('ProfileAlert')}
