@@ -11,9 +11,9 @@ const RecycleForm = ({ navigation: { navigate } }) => {
 
   return (
     <Formik
-      initialValues={{ email: '' }}
+      initialValues={{ otherNotes: '' }}
       onSubmit={(values) => navigate('RecycleConfirmation', values)}
-      style={{ flexGrow: 1 }}
+      style={{ flexGrow: 1, width: '100%' }}
     >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <View>
@@ -39,16 +39,9 @@ const RecycleForm = ({ navigation: { navigate } }) => {
           <Text>Other Notes</Text>
           <TextInput
             style={styles.TextInput}
-            onChangeText={handleChange('email')}
-            onBlur={handleBlur('email')}
-            value={values.email}
-          />
-          <Text>Additional Details</Text>
-          <TextInput
-            style={styles.TextInput}
-            onChangeText={handleChange('email')}
-            onBlur={handleBlur('email')}
-            value={values.email}
+            onChangeText={handleChange('otherNotes')}
+            onBlur={handleBlur('otherNotes')}
+            value={values.otherNotes}
           />
           <Button onPress={handleSubmit} title="Submit" />
         </View>

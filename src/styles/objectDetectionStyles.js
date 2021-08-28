@@ -3,11 +3,13 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
+    width: '100%',
   },
   scrollContentContainer: {
     flexGrow: 1,
     backgroundColor: '#2DB9A3',
     alignItems: 'center',
+    width: '100%',
   },
   loadingContainer: {
     justifyContent: 'center',
@@ -60,5 +62,5 @@ export default StyleSheet.create({
   footer: {
     marginTop: 40,
   },
-  formikContainer: { flex: 1 },
+  formikContainer: { flex: 1, width: '100%' },
 });
