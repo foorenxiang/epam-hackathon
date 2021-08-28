@@ -1,19 +1,11 @@
-import _ from 'lodash';
-
-export const isString = (value) => _.isString(value);
+import { isUndefined, isNull, isBoolean, isNumber, isString, isPlainObject, isArray } from 'lodash';
 
 export const isSerializable = (obj) => {
-  if (
-    _.isUndefined(obj) ||
-    _.isNull(obj) ||
-    _.isBoolean(obj) ||
-    _.isNumber(obj) ||
-    _.isString(obj)
-  ) {
+  if (isUndefined(obj) || isNull(obj) || isBoolean(obj) || isNumber(obj) || isString(obj)) {
     return true;
   }
 
-  if (!_.isPlainObject(obj) && !_.isArray(obj)) {
+  if (!isPlainObject(obj) && !isArray(obj)) {
     return false;
   }
 
