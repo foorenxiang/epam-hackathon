@@ -6,7 +6,6 @@ import LearnTabs from './screens/Learn';
 import Locate from './screens/Locate';
 import Log from './screens/Log';
 import Profile from './screens/Profile';
-import Examples from './ui/Examples';
 import AppContext from './utils/AppContext';
 
 const { Navigator: StackNavigator, Screen: StackScreen } = createNativeStackNavigator();
@@ -36,7 +35,6 @@ const Routes = () => (
       <DrawerScreen name="Locate" component={Locate} options={{}} />
       <DrawerScreen name="Log" component={Log} options={{}} />
       <DrawerScreen name="Profile" component={Profile} options={{}} />
-      <DrawerScreen name="UI Examples" component={Examples} options={{}} />
     </DrawerNavigator>
   </NavigationContainer>
 );
