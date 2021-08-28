@@ -1,7 +1,7 @@
 import React from 'react';
 import { registerRootComponent } from 'expo';
 import { SafeAreaView, View, StyleSheet } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
+// import { Picker } from '@react-native-picker/picker';
 import { Divider } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -50,13 +50,13 @@ const Examples = () => {
         }
       />
 
-      <Picker
-        selectedValue={selectedLanguage}
-        onValueChange={(itemValue, itemIndex) => setSelectedLanguage(itemValue)}
-      >
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-      </Picker>
+      {/* <Picker */}
+      {/*  selectedValue={selectedLanguage} */}
+      {/*  onValueChange={(itemValue, itemIndex) => setSelectedLanguage(itemValue)} */}
+      {/* > */}
+      {/*  <Picker.Item label="Java" value="java" /> */}
+      {/*  <Picker.Item label="JavaScript" value="js" /> */}
+      {/* </Picker> */}
     </View>
   );
 };
