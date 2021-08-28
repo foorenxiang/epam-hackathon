@@ -7,7 +7,7 @@ const ViewLogLanding = ({ navigation: { navigate } }) => {
     <ScrollView style={{ flex: 1, width: '100%' }}>
       <Image
         source={LogDetailsImage}
-        style={{ flex: 1, width: '100%', height: 1500, resizeMode: 'center' }}
+        style={{ flex: 1, width: '100%', height: 1575, resizeMode: 'center' }}
       />
     </ScrollView>
   );
