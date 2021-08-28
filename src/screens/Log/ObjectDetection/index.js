@@ -14,7 +14,7 @@ import RecycleForm from './RecycleForm';
 const ObjectDetection = ({ navigation }) => {
   const [image, setImage] = useState(null);
   const { isTfReady, isModelReady, predictions, setClassifierImageInput } = useClassifier();
-  const [selectedPrediction, setSelectedPrediction] = useState('');
+  const [selectedPrediction, setSelectedPrediction] = useState('Placeholder Prediction');
 
   // regular useEffect on component load
   useEffect(() => {
@@ -69,8 +69,13 @@ const ObjectDetection = ({ navigation }) => {
     );
   };
 
+  // const TextPad = () => <View style={{ flex: 1 }}></View>;
+
   return (
-    <ScrollView contentContainerStyle={styles.contentContainer}>
+    <ScrollView
+      style={styles.scrollContainer}
+      contentContainerStyle={styles.scrollContentContainer}
+    >
       <TouchableOpacity
         style={styles.imageWrapper}
         onPress={isModelReady ? selectImage : undefined}
@@ -82,6 +87,7 @@ const ObjectDetection = ({ navigation }) => {
           </Text>
         )}
       </TouchableOpacity>
+
       <View style={styles.predictionWrapper}>
         {image && !predictions && <Text style={styles.text}>Identifying...</Text>}
         {!!image &&
@@ -98,8 +104,11 @@ const ObjectDetection = ({ navigation }) => {
             }}
           />
         )}
-        {!!selectedPrediction && <RecycleForm style={{ flexGrow: 1 }} navigation={navigation} />}
       </View>
+      <View style={styles.formikContainer}>
+        {!!selectedPrediction && <RecycleForm navigation={navigation} />}
+      </View>
+      {/* <TextPad /> */}
     </ScrollView>
   );
 };

@@ -1,7 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  contentContainer: {
+  scrollContainer: {
+    flexGrow: 1,
+  },
+  scrollContentContainer: {
     flexGrow: 1,
     backgroundColor: '#2DB9A3',
     alignItems: 'center',
@@ -57,4 +60,5 @@ export default StyleSheet.create({
   footer: {
     marginTop: 40,
   },
+  formikContainer: { flex: 1 },
 });
