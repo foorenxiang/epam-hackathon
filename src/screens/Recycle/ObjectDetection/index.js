@@ -15,7 +15,8 @@ const ObjectDetection = ({ navigation }) => {
   const [image, setImage] = useState(null);
   const { isTfReady, isModelReady, predictions, setClassifierImageInput } = useClassifier();
   const [selectedPrediction, setSelectedPrediction] = useState(
-    'Placeholder Prediction. Remove me when done!'
+    // 'Placeholder Prediction. Remove me when done!'
+    ''
   );
 
   // regular useEffect on component load

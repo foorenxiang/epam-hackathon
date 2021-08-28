@@ -1,13 +1,10 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useSelector } from 'react-redux';
 import ViewLogLanding from './ViewLogLanding';
-import ElectronicStatus from './ElectronicStatus';
-import ObjectDetection from './ObjectDetection';
-import LogNewItem from './LogNewItem';
+// import LogNewItem from './LogNewItem';
 // import ItemView from './ItemView/original_index';
 import ItemView from './ItemView/index';
-import RecycleConfirmation from './RecycleConfirmation';
+import RecycleConfirmation from '../Recycle/RecycleConfirmation';
 
 const { Navigator: StackNavigator, Screen: StackScreen } = createNativeStackNavigator();
 
@@ -25,9 +22,9 @@ const Log = () => {
         component={ViewLogLanding}
         options={{ title: 'Electronic Logs' }}
       />
-      <StackScreen name="ElectronicStatus" component={ElectronicStatus} />
-      <StackScreen name="LogNewItem" component={LogNewItem} />
-      <StackScreen name="ObjectDetection" component={ObjectDetection} />
+      {/* <StackScreen name="ElectronicStatus" component={ElectronicStatus} /> */}
+      {/* <StackScreen name="LogNewItem" component={LogNewItem} /> */}
+
       {/* {logs.map((item) => (
         <StackScreen name={item.title} component={ItemView} key={item.id} />
       ))} */}

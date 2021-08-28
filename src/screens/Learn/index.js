@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LearnLanding from './LearnLanding';
 import LearnArticleViewer from './LearnArticleViewer';
+import Recycle from '../Recycle';
 import AppContext from '../../utils/AppContext';
 import Log from '../Log';
 import Profile from '../Profile';
@@ -25,6 +26,7 @@ const Learn = () => (
   >
     <StackScreen name="LearnLanding" component={LearnLanding} options={{ title: 'Learn' }} />
     <StackScreen name="LearnArticleViewer" component={LearnArticleViewer} />
+    <StackScreen name="Recycle" component={Recycle} />
   </StackNavigator>
 );
 

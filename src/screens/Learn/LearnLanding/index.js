@@ -48,7 +48,7 @@ const LearnLanding = ({ navigation: { navigate } }) => {
             width: 400,
             // backgroundColor: '#00F',
           }}
-          onPress={() => null}
+          onPress={() => navigate('Recycle')}
         >
           <Image
             source={RecycleWheel}
