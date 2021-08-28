@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 import React, { useState } from 'react';
-import { View, Image, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity, Linking } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import LocateBG from './LocateBG.jpg';
 import Image1 from './Image1.png';
@@ -10,12 +10,13 @@ const carouselItems = [Image1, Image2];
 
 const LocateLanding = ({ navigation: { navigate } }) => {
   const carouselRenderItem = ({ item }) => (
-    <View
+    <TouchableOpacity
       style={{
         justifyContent: 'center',
         alignItems: 'center',
         height: '100%',
       }}
+      onPress={() => Linking.openURL('https://www.towardszerowaste.gov.sg/ewaste/')}
     >
       <Image
         source={item}
@@ -26,7 +27,7 @@ const LocateLanding = ({ navigation: { navigate } }) => {
           //   backgroundColor: '#00F',
         }}
       />
-    </View>
+    </TouchableOpacity>
   );
 
   return (
