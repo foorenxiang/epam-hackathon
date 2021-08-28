@@ -13,7 +13,7 @@ const RecycleForm = ({ navigation: { navigate } }) => {
     <Formik
       initialValues={{ email: '' }}
       onSubmit={(values) => navigate('RecycleConfirmation', values)}
-      style={{ height: '50%', flex: 1 }}
+      style={{ flexGrow: 1 }}
     >
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <View>

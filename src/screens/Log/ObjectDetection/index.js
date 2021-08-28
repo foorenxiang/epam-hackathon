@@ -14,7 +14,7 @@ import RecycleForm from './RecycleForm';
 const ObjectDetection = ({ navigation }) => {
   const [image, setImage] = useState(null);
   const { isTfReady, isModelReady, predictions, setClassifierImageInput } = useClassifier();
-  const [selectedPrediction, setSelectedPrediction] = useState('placeholderprediction');
+  const [selectedPrediction, setSelectedPrediction] = useState('');
 
   // regular useEffect on component load
   useEffect(() => {
@@ -70,27 +70,37 @@ const ObjectDetection = ({ navigation }) => {
   };
 
   return (
-    <View style={{ height: 5000 }}>
-      <ScrollView contentContainerStyle={styles.contentContainer}>
-        <TouchableOpacity
-          style={styles.imageWrapper}
-          onPress={isModelReady ? selectImage : undefined}
-        >
-          {image && <Image source={image} style={styles.imageContainer} />}
-          {!image && (
-            <Text style={styles.transparentText}>
-              {isModelReady ? 'Tap to recognise!' : 'Loading object recognizer...'}
-            </Text>
-          )}
-        </TouchableOpacity>
-        <View style={styles.predictionWrapper}>
-          {image && !predictions && <Text style={styles.text}>Identifying...</Text>}
-          {predictions && !selectedPrediction && predictions.map((p) => renderPrediction(p))}
-          {!!selectedPrediction && <Text style={styles.text}>{selectedPrediction}</Text>}
-          {!!selectedPrediction && <RecycleForm style={styles.form} navigation={navigation} />}
-        </View>
-      </ScrollView>
-    </View>
+    <ScrollView contentContainerStyle={styles.contentContainer}>
+      <TouchableOpacity
+        style={styles.imageWrapper}
+        onPress={isModelReady ? selectImage : undefined}
+      >
+        {image && <Image source={image} style={styles.imageContainer} />}
+        {!image && (
+          <Text style={styles.transparentText}>
+            {isModelReady ? 'Tap to recognise!' : 'Loading object recognizer...'}
+          </Text>
+        )}
+      </TouchableOpacity>
+      <View style={styles.predictionWrapper}>
+        {image && !predictions && <Text style={styles.text}>Identifying...</Text>}
+        {!!image &&
+          predictions &&
+          !selectedPrediction &&
+          predictions.map((p) => renderPrediction(p))}
+        {!!selectedPrediction && <Text style={styles.text}>{selectedPrediction}</Text>}
+        {!!selectedPrediction && (
+          <Button
+            title="Retry Scan"
+            onPress={() => {
+              setSelectedPrediction('');
+              setImage(null);
+            }}
+          />
+        )}
+        {!!selectedPrediction && <RecycleForm style={{ flexGrow: 1 }} navigation={navigation} />}
+      </View>
+    </ScrollView>
   );
 };
 
