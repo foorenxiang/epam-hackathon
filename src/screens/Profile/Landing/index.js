@@ -19,8 +19,8 @@ const ProfileLanding = ({ navigation: { navigate } }) => {
       <TouchableOpacity
         style={{
           position: 'absolute',
-          top: 185,
-          left: 80,
+          top: 215,
+          left: 110,
           elevation: 100,
           height: 50,
           width: 200,

@@ -12,12 +12,12 @@ const ViewLogLanding = ({ navigation: { navigate } }) => {
       <TouchableOpacity
         style={{
           position: 'absolute',
-          top: 240,
+          top: 270,
           left: 25,
           elevation: 100,
-          height: 110,
-          width: 325,
-          //   backgroundColor: '#F00',
+          height: 120,
+          width: 370,
+          // backgroundColor: '#F00',
         }}
         onPress={() => navigate('ItemView')}
       />

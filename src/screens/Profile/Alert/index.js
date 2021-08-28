@@ -12,8 +12,8 @@ const Alert = ({ navigation: { navigate } }) => {
       <TouchableOpacity
         style={{
           position: 'absolute',
-          top: 500,
-          left: 25,
+          top: 550,
+          left: 40,
           elevation: 100,
           height: 110,
           width: 325,
