@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreenTabs from './screens/Home';
-import Learn from './screens/Learn';
+import LearnTabs from './screens/Learn';
+import Locate from './screens/Locate';
 import Log from './screens/Log';
 import Profile from './screens/Profile';
 import Examples from './ui/Examples';
@@ -15,10 +15,10 @@ const { Navigator: DrawerNavigator, Screen: DrawerScreen } = createDrawerNavigat
 const MainStackNavigation = () => {
   const { headerTitle } = useContext(AppContext);
   return (
-    <StackNavigator initialRouteName="HomeScreenTabs" screenOptions={{ title: headerTitle }}>
-      <StackScreen name="HomeScreenTabs" component={HomeScreenTabs} />
+    <StackNavigator initialRouteName="LearnTabs" screenOptions={{ title: headerTitle }}>
+      <StackScreen name="LearnTabs" component={LearnTabs} />
+      <StackScreen name="Locate" component={Locate} />
       <StackScreen name="Log" component={Log} />
-      <StackScreen name="Learn" component={Learn} />
       <StackScreen name="Profile" component={Profile} />
     </StackNavigator>
   );
@@ -33,8 +33,8 @@ const Routes = () => (
       }}
     >
       <DrawerScreen name="Main" component={MainStackNavigation} />
+      <DrawerScreen name="Locate" component={Locate} options={{}} />
       <DrawerScreen name="Log" component={Log} options={{}} />
-      <DrawerScreen name="Learn" component={Learn} options={{}} />
       <DrawerScreen name="Profile" component={Profile} options={{}} />
       <DrawerScreen name="UI Examples" component={Examples} options={{}} />
     </DrawerNavigator>
