@@ -3869,6 +3869,11 @@ expo-font@~9.2.1:
     expo-modules-core "~0.2.0"
     fontfaceobserver "^2.1.0"
 
+expo-instagram-stories@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/expo-instagram-stories/-/expo-instagram-stories-1.0.1.tgz#4b86fcc83a8249bb8060f9b774d9814cc0fbb9d4"
+  integrity sha512-fZJ5o2GAPUsdqlCEb6uc1RiBOcCjO2dclDQ7gjpBTUCkN+5SzjV5/omyBR/59s+6reVQoI3vs2USKeoNknIoTA==
+
 expo-keep-awake@~9.2.0:
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-9.2.0.tgz#9cbdcc8264c943ef29a58326236cd34267e98f43"
