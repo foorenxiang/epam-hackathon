@@ -14,6 +14,8 @@
         "react/prop-types": "off",
         "import/prefer-default-export": "off",
         "import/newline-after-import": "off",
+        "no-console": "off",
+        "no-alert": "off",
         "react/jsx-filename-extension": [
             1,
             {
