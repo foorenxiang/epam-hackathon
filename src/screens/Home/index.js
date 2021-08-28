@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AppContext from '../../utils/AppContext';
 import Log from '../Log';
 import Learn from '../Learn';
 import Profile from '../Profile';
@@ -20,18 +21,24 @@ const HomeScreen = () => (
   </StackNavigator>
 );
 
-const HomeScreenTabs = () => (
-  <TabNavigator
-    initialRouteName="Home"
-    screenOptions={{
-      headerShown: false,
-    }}
-  >
-    <TabScreen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
-    <TabScreen name="Log" component={Log} options={{}} />
-    <TabScreen name="Learn" component={Learn} options={{}} />
-    <TabScreen name="Profile" component={Profile} options={{}} />
-  </TabNavigator>
-);
+const HomeScreenTabs = ({ navigation }) => {
+  const { setTopNavigation } = useContext(AppContext);
+  useEffect(() => {
+    setTopNavigation(navigation);
+  }, []);
+  return (
+    <TabNavigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <TabScreen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
+      <TabScreen name="Log" component={Log} options={{}} />
+      <TabScreen name="Learn" component={Learn} options={{}} />
+      <TabScreen name="Profile" component={Profile} options={{}} />
+    </TabNavigator>
+  );
+};
 
 export default HomeScreenTabs;

@@ -18,6 +18,7 @@ const { Provider } = AppContext;
 const AppContextProvider = ({ children }) => {
   const [headerTitle, setHeaderTitle] = useState('EWaste');
   const [registeredUsers, setRegisteredUsers] = useState([]);
+  const [topNavigation, setTopNavigation] = useState({});
 
   const setHeaderTitleWrapper = (title) => setHeaderTitle(title);
 
@@ -66,6 +67,8 @@ const AppContextProvider = ({ children }) => {
     headerTitle,
     setActiveProfile: setActiveProfileWithPersistStore,
     setHeaderWrapper: setHeaderTitle,
+    topNavigation,
+    setTopNavigation,
   };
 
   return <Provider value={contextValues}>{children}</Provider>;
