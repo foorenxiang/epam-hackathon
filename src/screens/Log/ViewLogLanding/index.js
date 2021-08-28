@@ -1,45 +1,27 @@
 import React from 'react';
-import { View, StyleSheet, FlatList, Text, TouchableOpacity } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
-import { Button, ListItem, Avatar } from 'react-native-elements';
-
-const styles = StyleSheet.create({
-  wrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  newButton: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-  },
-  list: {
-    flex: 1,
-  },
-});
+import { Image, View, TouchableOpacity } from 'react-native';
+import LogImage from './Log.jpg';
 
 const ViewLogLanding = ({ navigation: { navigate } }) => {
-  const dispatch = useDispatch();
-
-  const logs = useSelector((state) => state.logs);
-  const renderItem = ({ item, i }) => (
-    <ListItem key={item.id} bottomDivider>
-      <ListItem.Content>
-        <TouchableOpacity onPress={() => navigate(item.title, { ...item })}>
-          <ListItem.Title>{item.title}</ListItem.Title>
-          <ListItem.Subtitle>{item.description}</ListItem.Subtitle>
-        </TouchableOpacity>
-      </ListItem.Content>
-    </ListItem>
-  );
   return (
-    <View style={styles.wrapper}>
-      <View>
-        <FlatList data={logs} renderItem={renderItem} keyExtractor={(item) => item.id} />
-      </View>
-      <View>
-        <Button onPress={() => navigate('LogNewItem')} title="Log New Item" color="#00F" />
-      </View>
+    <View style={{ flex: 1, width: '100%' }} contentContainerStyle={{ flex: 1, width: '100%' }}>
+      <Image
+        source={LogImage}
+        style={{ flex: 1, width: '100%', height: 400, resizeMode: 'center' }}
+      />
+      <TouchableOpacity
+        style={{
+          position: 'absolute',
+          top: 368,
+          left: 25,
+          elevation: 100,
+          height: 110,
+          width: 325,
+          backgroundColor: '#DDD',
+          opacity: 0,
+        }}
+        onPress={() => navigate('LearnArticleViewer')}
+      />
     </View>
   );
 };
