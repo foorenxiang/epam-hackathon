@@ -9,14 +9,12 @@ const RecycleConfirmation = ({
 }) => {
   const randomNumber = `${floor(random() * 1000000)}`.padStart(7, '0');
   return (
-    <>
-      <Text>{`
+    <Text>{`
     We have received your order to recycle your ${prediction}.
 
     Your recycle order is #${randomNumber}
     Thank you for doing your part to recycle!
     `}</Text>
-    </>
   );
 };
 
