@@ -1,19 +1,20 @@
 // Referenced from https://heartbeat.fritz.ai/image-classification-on-react-native-with-tensorflow-js-and-mobilenet-48a39185717c
 
 import React, { useState, useEffect } from 'react';
-import { Text, View, ActivityIndicator, StatusBar, Image, TouchableOpacity } from 'react-native';
-
-// import * as LocalAuthentication from "expo-local-authentication";
+import { Text, View, ScrollView, Button, StatusBar, Image, TouchableOpacity } from 'react-native';
+import { Col, Row, Grid } from 'react-native-easy-grid';
 import styles from '../../../styles/objectDetectionStyles';
 import { fileExtensionFromString } from '../../../utils/generalUtils';
 import handlePermissions from './permissions';
 import AlbumPicker from './imagePicker';
 import { isJPEG, invalidImageFormatAlert, convertImageToJpeg } from './imageConverter';
 import useClassifier from './tfHooks';
+import RecycleForm from './RecycleForm';
 
-const ObjectDetection = () => {
+const ObjectDetection = ({ navigation }) => {
   const [image, setImage] = useState(null);
   const { isTfReady, isModelReady, predictions, setClassifierImageInput } = useClassifier();
+  const [selectedPrediction, setSelectedPrediction] = useState('placeholderprediction');
 
   // regular useEffect on component load
   useEffect(() => {
@@ -55,38 +56,40 @@ const ObjectDetection = () => {
     }
   };
 
-  const renderPrediction = (prediction) => {
+  const renderPrediction = (predictionObjects) => {
+    const { className } = predictionObjects;
+    const prediction = className.split(',')[0];
     return (
-      <Text key={prediction.className} style={styles.text}>
-        {prediction.className}
-      </Text>
+      <Button
+        key={prediction}
+        title={prediction}
+        onPress={() => setSelectedPrediction(prediction)}
+        style={styles.text}
+      />
     );
   };
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="light-content" />
-      <View style={styles.loadingContainer}>
-        {/* <Text style={styles.text}>TFJS ready? {isTfReady ? <Text>✅</Text> : ''}</Text> */}
-        <View style={styles.loadingModelContainer}>
-          <Text style={styles.text}>
-            {isModelReady ? 'Ready to recognise!' : 'Waiting for AI to load...'}
-          </Text>
+    <View style={{ height: 5000 }}>
+      <ScrollView contentContainerStyle={styles.contentContainer}>
+        <TouchableOpacity
+          style={styles.imageWrapper}
+          onPress={isModelReady ? selectImage : undefined}
+        >
+          {image && <Image source={image} style={styles.imageContainer} />}
+          {!image && (
+            <Text style={styles.transparentText}>
+              {isModelReady ? 'Tap to recognise!' : 'Loading object recognizer...'}
+            </Text>
+          )}
+        </TouchableOpacity>
+        <View style={styles.predictionWrapper}>
+          {image && !predictions && <Text style={styles.text}>Identifying...</Text>}
+          {predictions && !selectedPrediction && predictions.map((p) => renderPrediction(p))}
+          {!!selectedPrediction && <Text style={styles.text}>{selectedPrediction}</Text>}
+          {!!selectedPrediction && <RecycleForm style={styles.form} navigation={navigation} />}
         </View>
-      </View>
-      <TouchableOpacity
-        style={styles.imageWrapper}
-        onPress={isModelReady ? selectImage : undefined}
-      >
-        {image && <Image source={image} style={styles.imageContainer} />}
-        {isModelReady && !image && <Text style={styles.transparentText}>Tap to choose image</Text>}
-      </TouchableOpacity>
-      <View style={styles.predictionWrapper}>
-        {isModelReady && image && (
-          <Text style={styles.text}>{predictions ? 'Identified: ' : 'Identifying...'}</Text>
-        )}
-        {isModelReady && predictions && predictions.map((p) => renderPrediction(p))}
-      </View>
+      </ScrollView>
     </View>
   );
 };

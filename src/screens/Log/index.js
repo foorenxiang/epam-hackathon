@@ -6,6 +6,7 @@ import ElectronicStatus from './ElectronicStatus';
 import ObjectDetection from './ObjectDetection';
 import LogNewItem from './LogNewItem';
 import ItemView from './ItemView';
+import RecycleConfirmation from './RecycleConfirmation';
 
 const { Navigator: StackNavigator, Screen: StackScreen } = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ const Log = () => {
       {logs.map((item) => (
         <StackScreen name={item.title} component={ItemView} key={item.id} />
       ))}
+      <StackScreen name="RecycleConfirmation" component={RecycleConfirmation} />
     </StackNavigator>
   );
 };

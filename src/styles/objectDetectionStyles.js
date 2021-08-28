@@ -1,13 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
+  contentContainer: {
     backgroundColor: '#2DB9A3',
     alignItems: 'center',
   },
   loadingContainer: {
-    marginTop: 80,
     justifyContent: 'center',
   },
   text: {
@@ -22,25 +20,25 @@ export default StyleSheet.create({
   },
   loadingModelContainer: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 5,
   },
   imageWrapper: {
-    width: 350,
-    height: 350,
+    width: 250,
+    height: 250,
     padding: 10,
     borderColor: '#fff',
     borderWidth: 5,
     borderStyle: 'solid',
-    marginTop: 40,
-    marginBottom: 10,
+    marginTop: 15,
+    marginBottom: 15,
     position: 'relative',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
   },
   imageContainer: {
-    width: 350,
-    height: 350,
+    width: 250,
+    height: 250,
     justifyContent: 'center',
     borderRadius: 20,
   },
@@ -52,7 +50,8 @@ export default StyleSheet.create({
   },
   transparentText: {
     color: '#ffffff',
-    opacity: 0.7,
+    opacity: 0.9,
+    fontSize: 20,
   },
   footer: {
     marginTop: 40,
