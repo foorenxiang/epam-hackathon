@@ -10,6 +10,7 @@
         "import/no-unresolved": "off",
         "consistent-return": "off",
         "import/extensions": "off",
+        "no-unused-vars": "off",
         "react/jsx-filename-extension": [
             1,
             {
