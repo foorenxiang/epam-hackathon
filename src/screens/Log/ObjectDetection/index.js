@@ -70,7 +70,7 @@ const ObjectDetection = () => {
         {/* <Text style={styles.text}>TFJS ready? {isTfReady ? <Text>✅</Text> : ''}</Text> */}
         <View style={styles.loadingModelContainer}>
           <Text style={styles.text}>
-            {isModelReady ? 'Ready to recognise!' : 'Waiting for AI to load...'}
+            {isModelReady ? 'Ready to recognise!' : 'Loading image recognition AI...'}
           </Text>
         </View>
       </View>
