@@ -7,7 +7,6 @@ import Profile from '../Profile';
 import HomeLanding from './HomeLanding';
 
 const { Navigator: StackNavigator, Screen: StackScreen } = createNativeStackNavigator();
-
 const { Navigator: TabNavigator, Screen: TabScreen } = createBottomTabNavigator();
 
 const HomeScreen = () => (
