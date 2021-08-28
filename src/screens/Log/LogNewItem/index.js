@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
+import { Text, View, Button, StyleSheet } from 'react-native';
 
 const LogNewItem = ({ navigation: { navigate } }) => (
   <View>
-    <Button onPress={() => navigate('ObjectDetection')} title="Upload Photo" color="#00F" />
+    <Text>Form placeholder</Text>
+    <Button onPress={() => navigate.back} title="Add new device" color="#00F" />
   </View>
 );
 

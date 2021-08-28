@@ -25,7 +25,7 @@ const ViewLogLanding = ({ navigation: { navigate } }) => {
   const renderItem = ({ item, i }) => (
     <ListItem key={item.id} bottomDivider>
       <ListItem.Content>
-        <TouchableOpacity onPress={() => navigate('')}>
+        <TouchableOpacity onPress={() => navigate(item.title, { ...item })}>
           <ListItem.Title>{item.title}</ListItem.Title>
           <ListItem.Subtitle>{item.description}</ListItem.Subtitle>
         </TouchableOpacity>
