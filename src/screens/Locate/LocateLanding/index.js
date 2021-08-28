@@ -14,13 +14,17 @@ const LocateLanding = ({ navigation: { navigate } }) => {
       style={{
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F00',
-        height: 130,
+        height: '100%',
       }}
     >
       <Image
         source={item}
-        style={{ resizeMode: 'contain', height: '100%', width: '50%', backgroundColor: '#00F' }}
+        style={{
+          resizeMode: 'center',
+          height: '100%',
+          width: '100%',
+          //   backgroundColor: '#00F',
+        }}
       />
     </View>
   );
@@ -39,7 +43,7 @@ const LocateLanding = ({ navigation: { navigate } }) => {
           justifyContent: 'center',
           elevation: 100,
           alignItems: 'center',
-          backgroundColor: '#000',
+          //   backgroundColor: '#000',
           height: 130,
           width: '80%',
         }}
@@ -47,8 +51,8 @@ const LocateLanding = ({ navigation: { navigate } }) => {
         <Carousel
           layout="default"
           data={carouselItems}
-          sliderWidth={350}
-          itemWidth={300}
+          sliderWidth={370}
+          itemWidth={150}
           renderItem={carouselRenderItem}
         />
       </View>
