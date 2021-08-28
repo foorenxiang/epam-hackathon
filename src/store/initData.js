@@ -1,0 +1,17 @@
+export const logs = [
+  { id: '1', title: 'title 1', description: 'description 2', status: 'status 123' },
+  { id: '3', title: 'title 3', description: 'description 4', status: 'status 123' },
+  { id: '5', title: 'title 5', description: 'description 6', status: 'status 123' },
+  { id: '7', title: 'title 7', description: 'description 8', status: 'status 123' },
+  { id: '9', title: 'title 9', description: 'description 10', status: 'status 123' },
+  { id: '11', title: 'title 11', description: 'description 12', status: 'status 123' },
+  { id: '13', title: 'title 13', description: 'description 14', status: 'status 123' },
+  { id: '15', title: 'title 15', description: 'description 16', status: 'status 123' },
+  { id: '17', title: 'title 17', description: 'description 18', status: 'status 123' },
+  { id: '19', title: 'title 19', description: 'description 20', status: 'status 123' },
+  { id: '21', title: 'title 21', description: 'description 22', status: 'status 123' },
+  { id: '23', title: 'title 23', description: 'description 24', status: 'status 123' },
+  { id: '25', title: 'title 25', description: 'description 26', status: 'status 123' },
+  { id: '27', title: 'title 27', description: 'description 28', status: 'status 123' },
+  { id: '29', title: 'title 29', description: 'description 30', status: 'status 123' },
+];

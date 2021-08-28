@@ -1,4 +1,5 @@
-import { ADD_TASK, DELETE_TASK, DID_TASK } from './types';
+import { ADD_TASK, DELETE_TASK, DID_TASK, LOAD_LOGS } from './types';
+import { logs } from './initData';
 
 const initialState = {
   tasks: [
@@ -6,6 +7,7 @@ const initialState = {
     { task: 'CSS', done: true, id: '2' },
     { task: 'Responsive design', done: true, id: '3' },
   ],
+  logs,
 };
 
 const taskReducer = (state = initialState, action) => {
@@ -40,6 +42,8 @@ const taskReducer = (state = initialState, action) => {
           };
         }),
       };
+    case LOAD_LOGS:
+      return state.logs;
     default:
       return state;
   }
