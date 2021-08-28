@@ -10,16 +10,16 @@ import LearnArticleViewer from './screens/LearnArticleViewer';
 import ObjectDetection from './screens/ObjectDetection';
 import ViewLog from './screens/ViewLog';
 
-const { Navigator, Screen: TabScreen } = createBottomTabNavigator();
+const { Navigator: TabNavigator, Screen: TabScreen } = createBottomTabNavigator();
 
 const Routes = () => (
   <NavigationContainer>
-    <Navigator initialRouteName="Home">
+    <TabNavigator initialRouteName="Home">
       <TabScreen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
       <TabScreen name="Learn" component={LearnLanding} options={{}} />
       <TabScreen name="Log New Electronic" component={LogNewItem} options={{}} />
       <TabScreen name="Profile" component={Profile} options={{}} />
-    </Navigator>
+    </TabNavigator>
   </NavigationContainer>
 );
 
