@@ -6,8 +6,15 @@ import styles from '../../../styles/RecycleConfirmationStyle';
 
 const RecycleForm = ({ navigation: { navigate } }) => {
   const [yearsUsed, setYearsUsed] = useState('');
-
   const [deviceCondition, setDeviceCondition] = useState('');
+
+  const yearsUsedValues = ['<1 yr', '1-2 yrs', '2-5 yrs', '6-10 yrs', '10+ yrs'];
+  const deviceConditionValues = [
+    'brand new',
+    'like new / barely used',
+    'cosmetic blemishes only',
+    'no longer usable',
+  ];
 
   return (
     <Formik
@@ -20,21 +27,18 @@ const RecycleForm = ({ navigation: { navigate } }) => {
           <Text>Additional Details</Text>
           <Text>Years Used</Text>
           <Picker selectedValue={yearsUsed} onValueChange={(itemValue) => setYearsUsed(itemValue)}>
-            <Picker.Item label="<1 yr" value="<1 yr" />
-            <Picker.Item label="1-2 yrs" value="1-2 yrs" />
-            <Picker.Item label="2-5 yrs" value="2-5 yrs" />
-            <Picker.Item label="6-10 yrs" value="6-10 yrs" />
-            <Picker.Item label="10+ yrs" value="10+ yrs" />
+            {yearsUsedValues.map((value) => (
+              <Picker.Item label={value} value={value} />
+            ))}
           </Picker>
           <Text>Device Condition</Text>
           <Picker
             selectedValue={deviceCondition}
             onValueChange={(itemValue) => setDeviceCondition(itemValue)}
           >
-            <Picker.Item label="brand new" value="brand new" />
-            <Picker.Item label="like new / barely used" value="like new / barely used" />
-            <Picker.Item label="cosmetic blemishes only" value="cosmetic blemishes only" />
-            <Picker.Item label="no longer usable" value="no longer usable" />
+            {deviceConditionValues.map((value) => (
+              <Picker.Item label={value} value={value} />
+            ))}
           </Picker>
           <Text>Other Notes</Text>
           <TextInput
