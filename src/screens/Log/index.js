@@ -8,7 +8,12 @@ import LogNewItem from './LogNewItem';
 const { Navigator: StackNavigator, Screen: StackScreen } = createNativeStackNavigator();
 
 const Log = () => (
-  <StackNavigator initialRouteName="ViewLogLanding">
+  <StackNavigator
+    initialRouteName="ViewLogLanding"
+    screenOptions={{
+      headerShown: false,
+    }}
+  >
     <StackScreen
       name="ViewLogLanding"
       component={ViewLogLanding}

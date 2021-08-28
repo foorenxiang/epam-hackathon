@@ -7,7 +7,12 @@ import LearnArticleViewer from './LearnArticleViewer';
 const { Navigator: StackNavigator, Screen: StackScreen } = createNativeStackNavigator();
 
 const Learn = () => (
-  <StackNavigator initialRouteName="LearnLanding">
+  <StackNavigator
+    initialRouteName="LearnLanding"
+    screenOptions={{
+      headerShown: false,
+    }}
+  >
     <StackScreen name="LearnLanding" component={LearnLanding} options={{ title: 'Learn' }} />
     <StackScreen name="LearnArticleViewer" component={LearnArticleViewer} />
   </StackNavigator>

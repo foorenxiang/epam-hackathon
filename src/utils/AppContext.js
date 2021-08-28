@@ -16,7 +16,10 @@ const AppContext = createContext({});
 const { Provider } = AppContext;
 
 const AppContextProvider = ({ children }) => {
+  const [headerTitle, setHeaderTitle] = useState('EWaste');
   const [registeredUsers, setRegisteredUsers] = useState([]);
+
+  const setHeaderTitleWrapper = (title) => setHeaderTitle(title);
 
   const addUser = (newUser) => {
     const userExists = registeredUsers.some((user) => user.name === newUser.name);
@@ -60,7 +63,9 @@ const AppContextProvider = ({ children }) => {
     addUser,
     deleteUser,
     activeProfile,
+    headerTitle,
     setActiveProfile: setActiveProfileWithPersistStore,
+    setHeaderWrapper: setHeaderTitle,
   };
 
   return <Provider value={contextValues}>{children}</Provider>;
