@@ -8,7 +8,7 @@ const initialState = {
   ],
 };
 
-export default taskReducer = (state = initialState, action) => {
+const taskReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
       return {
@@ -25,13 +25,13 @@ export default taskReducer = (state = initialState, action) => {
     case DELETE_TASK:
       return {
         ...state,
-        tasks: state.tasks.filter((item) => item != action.payload),
+        tasks: state.tasks.filter((item) => item !== action.payload),
       };
     case DID_TASK:
       return {
         ...state,
         tasks: state.tasks.map((item) => {
-          if (item.id != action.payload) {
+          if (item.id !== action.payload) {
             return item;
           }
           return {
@@ -40,8 +40,8 @@ export default taskReducer = (state = initialState, action) => {
           };
         }),
       };
-      break;
     default:
       return state;
   }
 };
+export default taskReducer;
