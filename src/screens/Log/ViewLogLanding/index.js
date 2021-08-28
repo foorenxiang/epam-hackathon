@@ -4,7 +4,7 @@ import LogImage from './Log.jpg';
 
 const ViewLogLanding = ({ navigation: { navigate } }) => {
   return (
-    <View style={{ flex: 1, width: '100%' }} contentContainerStyle={{ flex: 1, width: '100%' }}>
+    <View style={{ flex: 1, width: '100%' }}>
       <Image
         source={LogImage}
         style={{ flex: 1, width: '100%', height: 400, resizeMode: 'center' }}
@@ -12,15 +12,14 @@ const ViewLogLanding = ({ navigation: { navigate } }) => {
       <TouchableOpacity
         style={{
           position: 'absolute',
-          top: 368,
+          top: 240,
           left: 25,
           elevation: 100,
           height: 110,
           width: 325,
-          backgroundColor: '#DDD',
-          opacity: 0,
+          //   backgroundColor: '#F00',
         }}
-        onPress={() => navigate('LearnArticleViewer')}
+        onPress={() => navigate('ItemView')}
       />
     </View>
   );

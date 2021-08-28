@@ -1,24 +1,16 @@
 import React from 'react';
-import { Text, StyleSheet, Button } from 'react-native';
+import { Image, ScrollView } from 'react-native';
+import LogDetailsImage from './LogDetails.jpg';
 
-const ItemView = ({
-  navigation: { navigate },
-  route: {
-    params: { id, title, description, status },
-  },
-}) => {
-  const RECYCLE = true;
+const ViewLogLanding = ({ navigation: { navigate } }) => {
   return (
-    <>
-      <Text>{id}</Text>
-      <Text>{title}</Text>
-      <Text>{description}</Text>
-      <Text>{status}</Text>
-      {RECYCLE && <Button onPress={() => navigate('ObjectDetection')} title="Recycle?" />}
-    </>
+    <ScrollView style={{ flex: 1, width: '100%' }}>
+      <Image
+        source={LogDetailsImage}
+        style={{ flex: 1, width: '100%', height: 1500, resizeMode: 'center' }}
+      />
+    </ScrollView>
   );
 };
 
-const styles = StyleSheet.create({});
-
-export default ItemView;
+export default ViewLogLanding;
