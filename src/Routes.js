@@ -11,7 +11,7 @@ import AppContext from './utils/AppContext';
 const { Navigator: StackNavigator, Screen: StackScreen } = createNativeStackNavigator();
 const { Navigator: DrawerNavigator, Screen: DrawerScreen } = createDrawerNavigator();
 
-const MainScreen = () => {
+const MainStackNavigation = () => {
   const { headerTitle } = useContext(AppContext);
   return (
     <StackNavigator initialRouteName="HomeScreenTabs" screenOptions={{ title: headerTitle }}>
@@ -31,7 +31,7 @@ const Routes = () => (
         headerShown: false,
       }}
     >
-      <DrawerScreen name="Main" component={MainScreen} />
+      <DrawerScreen name="Main" component={MainStackNavigation} />
       <DrawerScreen name="Log" component={Log} options={{}} />
       <DrawerScreen name="Learn" component={Learn} options={{}} />
       <DrawerScreen name="Profile" component={Profile} options={{}} />
