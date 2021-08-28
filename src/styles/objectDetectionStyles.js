@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#171f24',
+    backgroundColor: '#2DB9A3',
     alignItems: 'center',
   },
   loadingContainer: {
@@ -12,7 +12,7 @@ export default StyleSheet.create({
   },
   text: {
     color: '#ffffff',
-    fontSize: 16,
+    fontSize: 20,
   },
   get textWithBottomMargin() {
     return {
@@ -25,8 +25,8 @@ export default StyleSheet.create({
     marginTop: 10,
   },
   imageWrapper: {
-    width: 280,
-    height: 280,
+    width: 350,
+    height: 350,
     padding: 10,
     borderColor: '#fff',
     borderWidth: 5,
@@ -36,6 +36,7 @@ export default StyleSheet.create({
     position: 'relative',
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 350 / 2,
   },
   imageContainer: {
     width: 250,

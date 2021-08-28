@@ -4,15 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, ActivityIndicator, StatusBar, Image, TouchableOpacity } from 'react-native';
 
 // import * as LocalAuthentication from "expo-local-authentication";
-import styles from './TFDemoStyles';
-import { fileExtensionFromString } from '../../utils/generalUtils';
+import styles from '../../../styles/objectDetectionStyles';
+import { fileExtensionFromString } from '../../../utils/generalUtils';
 import handlePermissions from './permissions';
-
 import AlbumPicker from './imagePicker';
 import { isJPEG, invalidImageFormatAlert, convertImageToJpeg } from './imageConverter';
 import useClassifier from './tfHooks';
-
-import biometricLogin from '../../utils/biometricLogin';
 
 const ObjectDetection = () => {
   const [image, setImage] = useState(null);
@@ -22,7 +19,6 @@ const ObjectDetection = () => {
   useEffect(() => {
     (async () => {
       handlePermissions().catch((error) => console.log(error));
-      biometricLogin().catch((error) => console.console.error(error));
     })();
   }, []);
 
@@ -71,10 +67,11 @@ const ObjectDetection = () => {
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <View style={styles.loadingContainer}>
-        <Text style={styles.text}>TFJS ready? {isTfReady ? <Text>✅</Text> : ''}</Text>
+        {/* <Text style={styles.text}>TFJS ready? {isTfReady ? <Text>✅</Text> : ''}</Text> */}
         <View style={styles.loadingModelContainer}>
-          <Text style={styles.text}>Model ready? </Text>
-          {isModelReady ? <Text style={styles.text}>✅</Text> : <ActivityIndicator size="small" />}
+          <Text style={styles.text}>
+            {isModelReady ? 'Ready to recognise!' : 'Waiting for AI to load...'}
+          </Text>
         </View>
       </View>
       <TouchableOpacity
