@@ -47,7 +47,8 @@ const RecycleForm = ({ navigation: { navigate } }) => {
             onBlur={handleBlur('otherNotes')}
             value={values.otherNotes}
           />
-          <Button onPress={handleSubmit} title="Submit" />
+          {/* <Button onPress={handleSubmit} title="Submit" /> */}
+          <Button onPress={() => navigate('RecycleConfirmation')} title="Submit" />
         </View>
       )}
     </Formik>
