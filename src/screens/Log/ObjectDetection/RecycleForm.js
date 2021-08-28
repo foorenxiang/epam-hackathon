@@ -28,7 +28,7 @@ const RecycleForm = ({ navigation: { navigate } }) => {
           <Text>Years Used</Text>
           <Picker selectedValue={yearsUsed} onValueChange={(itemValue) => setYearsUsed(itemValue)}>
             {yearsUsedValues.map((value) => (
-              <Picker.Item label={value} value={value} />
+              <Picker.Item label={value} value={value} key={value} />
             ))}
           </Picker>
           <Text>Device Condition</Text>
@@ -37,7 +37,7 @@ const RecycleForm = ({ navigation: { navigate } }) => {
             onValueChange={(itemValue) => setDeviceCondition(itemValue)}
           >
             {deviceConditionValues.map((value) => (
-              <Picker.Item label={value} value={value} />
+              <Picker.Item label={value} value={value} key={value} />
             ))}
           </Picker>
           <Text>Other Notes</Text>
