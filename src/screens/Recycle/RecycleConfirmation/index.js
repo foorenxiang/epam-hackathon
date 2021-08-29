@@ -1,17 +1,28 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { random, floor } from 'math';
+import { Image, ScrollView, TouchableOpacity } from 'react-native';
+import ConfirmationImage from './Confirmation.jpg';
 
-const RecycleConfirmation = ({ navigation: { navigate } }) => {
-  const randomNumber = `${floor(random() * 1000000)}`.padStart(7, '0');
+const RecycleMatches = ({ navigation: { navigate } }) => {
   return (
-    <Text style={{ flex: 1, fontSize: 15, color: '#FFF', backgroundColor: '#2EBBA4' }}>{`
-    We have received your order to recycle your device.
-
-    Your recycle order is #${randomNumber}
-    Thank you for doing your part to recycle!
-    `}</Text>
+    <ScrollView style={{ flex: 1, width: '100%' }}>
+      <Image
+        source={ConfirmationImage}
+        style={{ flex: 1, width: '100%', height: 850, resizeMode: 'center' }}
+      />
+      <TouchableOpacity
+        style={{
+          // backgroundColor: '#F00',
+          position: 'absolute',
+          top: 750,
+          left: 125,
+          elevation: 100,
+          height: 50,
+          width: '40%',
+        }}
+        onPress={() => navigate('LearnLanding')}
+      />
+    </ScrollView>
   );
 };
 
-export default RecycleConfirmation;
+export default RecycleMatches;
