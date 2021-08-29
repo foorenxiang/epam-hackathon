@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, ScrollView } from 'react-native';
 import LogDetailsImage from './LogDetails.jpg';
 
-const ViewLogLanding = ({ navigation: { navigate } }) => {
+const ViewLogLanding = () => {
   return (
     <ScrollView style={{ flex: 1, width: '100%' }}>
       <Image

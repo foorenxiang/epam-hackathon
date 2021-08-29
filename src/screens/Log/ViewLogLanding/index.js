@@ -17,7 +17,6 @@ const ViewLogLanding = ({ navigation: { navigate } }) => {
           elevation: 100,
           height: 120,
           width: 370,
-          // backgroundColor: '#F00',
         }}
         onPress={() => navigate('ItemView')}
       />

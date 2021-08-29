@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ScrollView, TouchableOpacity, ImageBackground } from 'react-native';
+import { Image, ScrollView, TouchableOpacity } from 'react-native';
 import Img from './alert.jpg';
 
 const Alert = ({ navigation: { navigate } }) => {
@@ -17,7 +17,6 @@ const Alert = ({ navigation: { navigate } }) => {
           elevation: 100,
           height: 110,
           width: 325,
-          // backgroundColor: '#f00',
           opacity: 0.8,
         }}
         onPress={() => navigate('ProfileLanding')}

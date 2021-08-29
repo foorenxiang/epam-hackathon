@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Image,
-  ScrollView,
-  TouchableOpacity,
-  ImageBackground,
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
+import { Image, ScrollView, TouchableOpacity } from 'react-native';
 import Img from './Profile.jpg';
 
 const ProfileLanding = ({ navigation: { navigate } }) => {

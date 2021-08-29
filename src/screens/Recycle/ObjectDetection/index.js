@@ -1,22 +1,18 @@
 // Referenced from https://heartbeat.fritz.ai/image-classification-on-react-native-with-tensorflow-js-and-mobilenet-48a39185717c
 
 import React, { useState, useEffect } from 'react';
-import { Text, View, ScrollView, Button, StatusBar, Image, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, Button, Image, TouchableOpacity } from 'react-native';
 import styles from '../../../styles/objectDetectionStyles';
 import { fileExtensionFromString } from '../../../utils/generalUtils';
 import handlePermissions from './permissions';
 import AlbumPicker from './imagePicker';
 import { isJPEG, invalidImageFormatAlert, convertImageToJpeg } from './imageConverter';
 import useClassifier from './tfHooks';
-// import RecycleForm from './RecycleForm';
 
 const ObjectDetection = ({ navigation }) => {
   const [image, setImage] = useState(null);
-  const { isTfReady, isModelReady, predictions, setClassifierImageInput } = useClassifier();
-  const [selectedPrediction, setSelectedPrediction] = useState(
-    // 'Placeholder Prediction. Remove me when done!'
-    ''
-  );
+  const { isModelReady, predictions, setClassifierImageInput } = useClassifier();
+  const [selectedPrediction, setSelectedPrediction] = useState('');
 
   // regular useEffect on component load
   useEffect(() => {
@@ -122,11 +118,6 @@ const ObjectDetection = ({ navigation }) => {
           />
         )}
       </View>
-      {/* <View style={styles.formikContainer}>
-        {!!selectedPrediction && (
-          <RecycleForm prediction={selectedPrediction} navigation={navigation} />
-        )}
-      </View> */}
     </ScrollView>
   );
 };

@@ -1,7 +1,7 @@
-/* eslint-disable global-require */
-import React, { useState } from 'react';
-import { View, Image, TouchableOpacity, Linking } from 'react-native';
+import React from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
+import openLink from '../../../utils/openLink';
 import Image1 from './Article1.png';
 import Image2 from './Article2.png';
 import Image3 from './Article3.png';
@@ -13,11 +13,7 @@ const carouselItems = [
     image: Image2,
     touchable() {
       const vidLink = 'https://www.youtube.com/watch?v=IqxwnmlUUts';
-      Linking.canOpenURL(vidLink).then((supported) => {
-        if (supported) {
-          Linking.openURL(vidLink);
-        }
-      });
+      openLink(vidLink);
     },
   },
   {
@@ -25,19 +21,12 @@ const carouselItems = [
     image: Image3,
     touchable() {
       const vidLink = 'https://www.instagram.com/p/CHaov9Mr0Dv/';
-      Linking.canOpenURL(vidLink).then((supported) => {
-        if (supported) {
-          Linking.openURL(vidLink);
-        }
-      });
+      openLink(vidLink);
     },
   },
 ];
 
-const LearnArticleViewer = ({ navigation: { navigate } }) => {
-  const [carousel, setCarousel] = useState('');
-  const [activeIndex, setActiveIndex] = useState(0);
-
+const LearnArticleViewer = () => {
   const renderItem = ({ item }) => (
     <View
       style={{
@@ -69,12 +58,10 @@ const LearnArticleViewer = ({ navigation: { navigate } }) => {
     >
       <Carousel
         layout="default"
-        ref={(ref) => setCarousel(ref)}
         data={carouselItems}
         sliderWidth={350}
         itemWidth={300}
         renderItem={renderItem}
-        onSnapToItem={(index) => setActiveIndex(index)}
       />
     </View>
   );

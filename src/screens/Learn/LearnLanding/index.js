@@ -36,8 +36,6 @@ const LearnLanding = ({ navigation: { navigate } }) => {
             elevation: 100,
             height: 120,
             width: 360,
-            // backgroundColor: '#F00',
-            // opacity: 1,
           }}
           onPress={() => navigate('LearnArticleViewer')}
         />
@@ -51,7 +49,6 @@ const LearnLanding = ({ navigation: { navigate } }) => {
             elevation: 100,
             height: 300,
             width: 400,
-            // backgroundColor: '#00F',
           }}
           onPress={() => navigate('Recycle')}
         >
@@ -69,7 +66,6 @@ const LearnLanding = ({ navigation: { navigate } }) => {
           elevation: 200,
           height: 60,
           width: 65,
-          // backgroundColor: '#F00',
         }}
         onPress={() => setRecycleBtnSelected(!recycleBtnSelected)}
       >

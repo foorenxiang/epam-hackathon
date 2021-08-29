@@ -11,7 +11,6 @@ const RecycleForm = ({ navigation: { navigate } }) => {
       />
       <TouchableOpacity
         style={{
-          // backgroundColor: '#F00',
           position: 'absolute',
           top: 1010,
           right: 30,

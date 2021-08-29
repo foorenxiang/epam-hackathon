@@ -24,7 +24,7 @@ const RecycleForm = ({ navigation: { navigate }, prediction }) => {
       onSubmit={(values) => onSubmitHandler(values)}
       style={{ flexGrow: 1, width: '100%' }}
     >
-      {({ handleChange, handleBlur, handleSubmit, values }) => (
+      {({ handleChange, handleBlur, values }) => (
         <View>
           <Text>Additional Details</Text>
           <Text>Years Used</Text>
@@ -49,7 +49,6 @@ const RecycleForm = ({ navigation: { navigate }, prediction }) => {
             onBlur={handleBlur('otherNotes')}
             value={values.otherNotes}
           />
-          {/* <Button onPress={handleSubmit} title="Submit" /> */}
           <Button onPress={() => onSubmitHandler()} title="Submit" />
         </View>
       )}

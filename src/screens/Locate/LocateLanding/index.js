@@ -1,14 +1,14 @@
-/* eslint-disable global-require */
-import React, { useState } from 'react';
-import { View, Image, TouchableOpacity, Linking } from 'react-native';
+import React from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
+import openLink from '../../../utils/openLink';
 import LocateBG from './LocateBG.jpg';
 import Image1 from './Image1.png';
 import Image2 from './Image2.png';
 
 const carouselItems = [Image1, Image2];
 
-const LocateLanding = ({ navigation: { navigate } }) => {
+const LocateLanding = () => {
   const carouselRenderItem = ({ item }) => (
     <TouchableOpacity
       style={{
@@ -16,7 +16,7 @@ const LocateLanding = ({ navigation: { navigate } }) => {
         alignItems: 'center',
         height: '100%',
       }}
-      onPress={() => Linking.openURL('https://www.towardszerowaste.gov.sg/ewaste/')}
+      onPress={() => openLink('https://www.towardszerowaste.gov.sg/ewaste/')}
     >
       <Image
         source={item}
@@ -24,7 +24,6 @@ const LocateLanding = ({ navigation: { navigate } }) => {
           resizeMode: 'center',
           height: '100%',
           width: '100%',
-          //   backgroundColor: '#00F',
         }}
       />
     </TouchableOpacity>
@@ -44,7 +43,6 @@ const LocateLanding = ({ navigation: { navigate } }) => {
           justifyContent: 'center',
           elevation: 100,
           alignItems: 'center',
-          //   backgroundColor: '#000',
           height: 130,
           width: '80%',
         }}
