@@ -2,14 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Text, View, ScrollView, Button, StatusBar, Image, TouchableOpacity } from 'react-native';
-import { Col, Row, Grid } from 'react-native-easy-grid';
 import styles from '../../../styles/objectDetectionStyles';
 import { fileExtensionFromString } from '../../../utils/generalUtils';
 import handlePermissions from './permissions';
 import AlbumPicker from './imagePicker';
 import { isJPEG, invalidImageFormatAlert, convertImageToJpeg } from './imageConverter';
 import useClassifier from './tfHooks';
-import RecycleForm from './RecycleForm';
+// import RecycleForm from './RecycleForm';
 
 const ObjectDetection = ({ navigation }) => {
   const [image, setImage] = useState(null);
@@ -63,16 +62,27 @@ const ObjectDetection = ({ navigation }) => {
     const { className } = predictionObjects;
     const prediction = className.split(',')[0];
     return (
-      <Button
-        key={prediction}
-        title={prediction}
-        onPress={() => setSelectedPrediction(prediction)}
-        style={styles.text}
-      />
+      <TouchableOpacity
+        onPress={() => navigation.navigate('RecycleForm')}
+        style={{
+          backgroundColor: '#FFF',
+          width: '65%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          paddingTop: 5,
+          paddingBottom: 5,
+          marginTop: 15,
+          marginBottom: 15,
+          borderRadius: 10,
+        }}
+        key={`${className}-touchable`}
+      >
+        <Text style={{ color: '#264257', fontSize: 24 }} key={`${className}-Text`}>
+          {prediction}
+        </Text>
+      </TouchableOpacity>
     );
   };
-
-  // const TextPad = () => <View style={{ flex: 1 }}></View>;
 
   return (
     <ScrollView
@@ -92,7 +102,11 @@ const ObjectDetection = ({ navigation }) => {
       </TouchableOpacity>
 
       <View style={styles.predictionWrapper}>
-        {image && !predictions && <Text style={styles.text}>Identifying...</Text>}
+        {image && (
+          <Text style={styles.text}>
+            {predictions ? 'Please select the device' : 'Identifying...'}
+          </Text>
+        )}
         {!!image &&
           predictions &&
           !selectedPrediction &&
@@ -108,12 +122,11 @@ const ObjectDetection = ({ navigation }) => {
           />
         )}
       </View>
-      <View style={styles.formikContainer}>
+      {/* <View style={styles.formikContainer}>
         {!!selectedPrediction && (
           <RecycleForm prediction={selectedPrediction} navigation={navigation} />
         )}
-      </View>
-      {/* <TextPad /> */}
+      </View> */}
     </ScrollView>
   );
 };
