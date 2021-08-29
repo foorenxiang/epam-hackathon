@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
+import openLink from '../../../utils/openLink';
 import Image1 from './Article1.png';
 import Image2 from './Article2.png';
 import Image3 from './Article3.png';
@@ -12,12 +13,7 @@ const carouselItems = [
     image: Image2,
     touchable() {
       const vidLink = 'https://www.youtube.com/watch?v=IqxwnmlUUts';
-      (async () => {
-        const supported = await Linking.canOpenURL(vidLink);
-        if (supported) {
-          Linking.openURL(vidLink);
-        }
-      })();
+      openLink(vidLink);
     },
   },
   {
@@ -25,12 +21,7 @@ const carouselItems = [
     image: Image3,
     touchable() {
       const vidLink = 'https://www.instagram.com/p/CHaov9Mr0Dv/';
-      (async () => {
-        const supported = await Linking.canOpenURL(vidLink);
-        if (supported) {
-          Linking.openURL(vidLink);
-        }
-      })();
+      openLink(vidLink);
     },
   },
 ];
