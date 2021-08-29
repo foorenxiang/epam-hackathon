@@ -19,7 +19,7 @@ const RecycleForm = ({ navigation: { navigate } }) => {
           height: 80,
           width: 180,
         }}
-        onPress={() => navigate('RecycleConfirmation')}
+        onPress={() => navigate('RecycleMatches')}
       />
     </ScrollView>
   );
