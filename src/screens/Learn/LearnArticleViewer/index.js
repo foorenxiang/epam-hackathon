@@ -12,11 +12,12 @@ const carouselItems = [
     image: Image2,
     touchable() {
       const vidLink = 'https://www.youtube.com/watch?v=IqxwnmlUUts';
-      Linking.canOpenURL(vidLink).then((supported) => {
+      (async () => {
+        const supported = await Linking.canOpenURL(vidLink);
         if (supported) {
           Linking.openURL(vidLink);
         }
-      });
+      })();
     },
   },
   {
@@ -24,11 +25,12 @@ const carouselItems = [
     image: Image3,
     touchable() {
       const vidLink = 'https://www.instagram.com/p/CHaov9Mr0Dv/';
-      Linking.canOpenURL(vidLink).then((supported) => {
+      (async () => {
+        const supported = await Linking.canOpenURL(vidLink);
         if (supported) {
           Linking.openURL(vidLink);
         }
-      });
+      })();
     },
   },
 ];
