@@ -1,16 +1,10 @@
-/* eslint-disable react/prop-types */
 import React, { createContext, useState, useEffect } from 'react';
 import {
   ERROR_USER_EXIST,
   PERSIST_KEY_REGISTERED_USERS,
   PERSIST_KEY_ACTIVE_PROFILE,
 } from './Constants';
-import {
-  // persistClear,
-  persistStore,
-  loadStateFromStore,
-  setStateAndStore,
-} from './AsyncStorageHandler';
+import { persistStore, loadStateFromStore, setStateAndStore } from './AsyncStorageHandler';
 
 const AppContext = createContext({});
 const { Provider } = AppContext;
@@ -53,7 +47,6 @@ const AppContextProvider = ({ children }) => {
 
   useEffect(() => {
     Promise.all([
-      // persistClear(),
       loadStateFromStore(PERSIST_KEY_REGISTERED_USERS, setRegisteredUsers),
       loadStateFromStore(PERSIST_KEY_ACTIVE_PROFILE, setActiveProfile),
     ]);

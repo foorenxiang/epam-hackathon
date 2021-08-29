@@ -49,7 +49,6 @@ const RecycleForm = ({ navigation: { navigate }, prediction }) => {
             onBlur={handleBlur('otherNotes')}
             value={values.otherNotes}
           />
-          {/* <Button onPress={handleSubmit} title="Submit" /> */}
           <Button onPress={() => onSubmitHandler()} title="Submit" />
         </View>
       )}

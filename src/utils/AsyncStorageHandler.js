@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { isSerializable } from './UtilityFunctions';
 

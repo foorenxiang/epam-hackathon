@@ -8,15 +8,11 @@ import handlePermissions from './permissions';
 import AlbumPicker from './imagePicker';
 import { isJPEG, invalidImageFormatAlert, convertImageToJpeg } from './imageConverter';
 import useClassifier from './tfHooks';
-// import RecycleForm from './RecycleForm';
 
 const ObjectDetection = ({ navigation }) => {
   const [image, setImage] = useState(null);
   const { isTfReady, isModelReady, predictions, setClassifierImageInput } = useClassifier();
-  const [selectedPrediction, setSelectedPrediction] = useState(
-    // 'Placeholder Prediction. Remove me when done!'
-    ''
-  );
+  const [selectedPrediction, setSelectedPrediction] = useState('');
 
   // regular useEffect on component load
   useEffect(() => {
@@ -122,11 +118,6 @@ const ObjectDetection = ({ navigation }) => {
           />
         )}
       </View>
-      {/* <View style={styles.formikContainer}>
-        {!!selectedPrediction && (
-          <RecycleForm prediction={selectedPrediction} navigation={navigation} />
-        )}
-      </View> */}
     </ScrollView>
   );
 };

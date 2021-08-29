@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import React, { useState } from 'react';
 import { View, Image, TouchableOpacity, Linking } from 'react-native';
 import Carousel from 'react-native-snap-carousel';

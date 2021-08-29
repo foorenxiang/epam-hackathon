@@ -38,7 +38,6 @@ const ViewLogLanding = ({ navigation: { navigate } }) => {
         <FlatList data={logs} renderItem={renderItem} keyExtractor={(item) => item.id} />
       </View>
       <View>
-        {/* <Button onPress={() => navigate('LogNewItem')} title="Log New Item" color="#00F" /> */}
         <Button onPress={() => null} title="Log New Item" color="#00F" />
       </View>
     </View>

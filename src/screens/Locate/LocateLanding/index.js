@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import React, { useState } from 'react';
 import { View, Image, TouchableOpacity, Linking } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
@@ -24,7 +23,6 @@ const LocateLanding = ({ navigation: { navigate } }) => {
           resizeMode: 'center',
           height: '100%',
           width: '100%',
-          //   backgroundColor: '#00F',
         }}
       />
     </TouchableOpacity>
@@ -44,7 +42,6 @@ const LocateLanding = ({ navigation: { navigate } }) => {
           justifyContent: 'center',
           elevation: 100,
           alignItems: 'center',
-          //   backgroundColor: '#000',
           height: 130,
           width: '80%',
         }}

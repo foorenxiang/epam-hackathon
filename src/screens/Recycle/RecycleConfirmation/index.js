@@ -11,7 +11,6 @@ const RecycleMatches = ({ navigation: { navigate } }) => {
       />
       <TouchableOpacity
         style={{
-          // backgroundColor: '#F00',
           position: 'absolute',
           top: 750,
           left: 125,
