@@ -10,7 +10,6 @@
     "import/no-unresolved": "off",
     "consistent-return": "off",
     "import/extensions": "off",
-    "no-unused-vars": "off",
     "react/prop-types": "off",
     "import/prefer-default-export": "off",
     "import/newline-after-import": "off",
