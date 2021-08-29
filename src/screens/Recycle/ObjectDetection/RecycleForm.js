@@ -24,7 +24,7 @@ const RecycleForm = ({ navigation: { navigate }, prediction }) => {
       onSubmit={(values) => onSubmitHandler(values)}
       style={{ flexGrow: 1, width: '100%' }}
     >
-      {({ handleChange, handleBlur, handleSubmit, values }) => (
+      {({ handleChange, handleBlur, values }) => (
         <View>
           <Text>Additional Details</Text>
           <Text>Years Used</Text>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Image, TouchableOpacity, Linking } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import Image1 from './Article1.png';
@@ -33,10 +33,7 @@ const carouselItems = [
   },
 ];
 
-const LearnArticleViewer = ({ navigation: { navigate } }) => {
-  const [carousel, setCarousel] = useState('');
-  const [activeIndex, setActiveIndex] = useState(0);
-
+const LearnArticleViewer = () => {
   const renderItem = ({ item }) => (
     <View
       style={{
@@ -68,12 +65,10 @@ const LearnArticleViewer = ({ navigation: { navigate } }) => {
     >
       <Carousel
         layout="default"
-        ref={(ref) => setCarousel(ref)}
         data={carouselItems}
         sliderWidth={350}
         itemWidth={300}
         renderItem={renderItem}
-        onSnapToItem={(index) => setActiveIndex(index)}
       />
     </View>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Image, TouchableOpacity, Linking } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import LocateBG from './LocateBG.jpg';
@@ -7,7 +7,7 @@ import Image2 from './Image2.png';
 
 const carouselItems = [Image1, Image2];
 
-const LocateLanding = ({ navigation: { navigate } }) => {
+const LocateLanding = () => {
   const carouselRenderItem = ({ item }) => (
     <TouchableOpacity
       style={{

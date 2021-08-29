@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ScrollView, TouchableOpacity, ImageBackground } from 'react-native';
+import { Image, ScrollView, TouchableOpacity } from 'react-native';
 import Img from './alert.jpg';
 
 const Alert = ({ navigation: { navigate } }) => {

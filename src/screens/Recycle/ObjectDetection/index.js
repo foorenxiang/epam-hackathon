@@ -1,7 +1,7 @@
 // Referenced from https://heartbeat.fritz.ai/image-classification-on-react-native-with-tensorflow-js-and-mobilenet-48a39185717c
 
 import React, { useState, useEffect } from 'react';
-import { Text, View, ScrollView, Button, StatusBar, Image, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, Button, Image, TouchableOpacity } from 'react-native';
 import styles from '../../../styles/objectDetectionStyles';
 import { fileExtensionFromString } from '../../../utils/generalUtils';
 import handlePermissions from './permissions';
@@ -11,7 +11,7 @@ import useClassifier from './tfHooks';
 
 const ObjectDetection = ({ navigation }) => {
   const [image, setImage] = useState(null);
-  const { isTfReady, isModelReady, predictions, setClassifierImageInput } = useClassifier();
+  const { isModelReady, predictions, setClassifierImageInput } = useClassifier();
   const [selectedPrediction, setSelectedPrediction] = useState('');
 
   // regular useEffect on component load
