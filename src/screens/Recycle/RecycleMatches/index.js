@@ -7,7 +7,7 @@ const RecycleMatches = ({ navigation: { navigate } }) => {
     <ScrollView style={{ flex: 1, width: '100%' }}>
       <Image
         source={RecycleMatchesImage}
-        style={{ flex: 1, width: '100%', height: 850, resizeMode: 'center' }}
+        style={{ flex: 1, width: '100%', height: 800, resizeMode: 'center' }}
       />
       <TouchableOpacity
         style={{

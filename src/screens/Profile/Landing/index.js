@@ -7,19 +7,16 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
-import Img from './landing.png';
+import Img from './Profile.jpg';
 
 const ProfileLanding = ({ navigation: { navigate } }) => {
   return (
-    <ScrollView
-      style={{ flex: 1, width: '100%' }}
-      contentContainerStyle={{ flex: 1, width: '100%' }}
-    >
-      <Image source={Img} style={{ flex: 1, width: '100%', height: 800, resizeMode: 'contain' }} />
+    <ScrollView style={{ flex: 1, width: '100%' }}>
+      <Image source={Img} style={{ flex: 1, width: '100%', height: 1180, resizeMode: 'center' }} />
       <TouchableOpacity
         style={{
           position: 'absolute',
-          top: 215,
+          top: 210,
           left: 110,
           elevation: 100,
           height: 50,
